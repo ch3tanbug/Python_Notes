@@ -116,47 +116,58 @@ dict1 = {"name":"Sakshi", "age":20, "canVote":True}
 print(dict1)
 ```
 
-#Operators
+# Operators
 Operators are symbols in python used to perform some specific operation
-Types of builtin operators-
-    +   -   add
-    -   -   subtraction
-    *   -   multiplication
-    **  -   exponential
-    /   -   division (returns quotient)
-    %   -   modulus (returns remainder)
-    //  -   floor division (returns quotient as whole number)
 
-#Typecasting in Python
+Types of builtin operators-
+1. `+`   -   add
+2. `-`   -   subtraction
+3. `*`   -   multiplication
+4. `**`  -   exponential
+5. `/`  -   division (returns quotient)
+6. `%`  -   modulus (returns remainder)
+7. `//`  -   floor division (returns quotient as whole number)
+
+# Typecasting in Python
 The conversion of one datatype into another datatype is what we refer to as Typecasting
+
 Python supports plenty of functions for performing typecasting like int(), float(), str(), ord(), hex(), oct(), tuple(), set(), list(), dict(), etc
 
 There are two type of typecasting -
-    1.Explicit Conversion (Explicit type casting in python) - This is done by the programmer manually as per requirement it is achieved by using functions like int(),float() etc.
+
+1. `Explicit Conversion (Explicit type casting in python)` - This is done by the programmer manually as per requirement it is achieved by using functions like int(),float() etc.
+```python
             a="9"
             b="7"
             print(a+b) # this will show 97 as output
             print(int(a)+int(b)) # this will show 16 as output because of type casting
+```
 
-    2.Implicit Conversion (Implicit type casting in python) -   Datatypes in python do not have same order. So when an operation is performed
-    between two different datatypes the python interpreter automatically converts the smaller datatype to the higher datatype to prevent data loss
-    this is called implicit conversion or typecasting.
+2. `Implicit Conversion (Implicit type casting in python)` -   Datatypes in python do not have same order. So when an operation is performed between two different datatypes the python interpreter automatically converts the smaller datatype to the higher datatype to prevent data loss this is called implicit conversion or typecasting.
+```python
         a=9.9
         b=7
         print(a+b)  # this will show 16.9 as output because of implicit type casting
+```
 
-#Taking user input in python
-    We can taker user input in python with the help of input() function. It generally returns value as string or character.
-    But input function returns the value as string. Hence we have to typecast them whenever required to another datatype.
-    We can also display a text using input function. This will make input() function take user input and display a message as well.
+# Taking user input in python
+We can taker user input in python with the help of input() function. It generally returns value as string or character.
+But input function returns the value as string. Hence we have to typecast them whenever required to another datatype.
+We can also display a text using input function. This will make input() function take user input and display a message as well.
+```python
         a=int(input("Enter a number: "))  #typecasting as int() in input as well as displaying message
+```
 
-#Strings
+# Strings
 In python, anything that you enclose between single or double quotation marks is considered a string. A string is essentially a sequence or array of textual data. Strings are used when working with Unicode characters.
-    eg- "Chetan"
+
+`eg- "Chetan"`
+
 It doesnt matter if you use single quotation marks or double quotation marks while making a string.
-If you want to use (" or ') inside a string you can use escape sequence characters like /" or /' or you can enclose single quotation marks inside double quotationmark string and vice versa
-    eg - print("hello 'chetan'") or print ("hello /'chetan/'")
+If you want to use `(" or ')` inside a string you can use escape sequence characters like `/"` or `/'` or you can enclose single quotation marks inside double quotationmark string and vice versa
+```python
+eg - print("hello 'chetan'") or print ("hello /'chetan/'")
+```
 
 ### Multiline Strings
 If our string has multiple lines it can be created like -
