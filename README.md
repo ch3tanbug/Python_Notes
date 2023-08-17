@@ -308,5 +308,45 @@ print("hello".startswith("h"))
 print("HEllo".swapcase())
 ```
 
+## If-Else conditional statements in python
+Sometimes a programmer needs to take further descisions based on the evaluation of certain expressions as true or false.
+
+This is where conditional statements comes to rescue.
+
+###  Conditional statements are classified as follows:
+1. `if`
+```python
+if(a>5):
+        print(a)
+```
+2. `if-else`
+```python
+if(a>5):
+        print(a)
+else:
+        print(5)
+```
+
+3. `if-else-elif` - Sometimes, the programmer may want to evaluate more than one condition, this can be done using an elif statement.
+```python
+if(a>5):
+        print(a)
+elif(a>3):
+        print(a+1)
+else:
+        print(5)
+```
+
+4. `nested if-else-elif` - We can use if, if-else, elif statements inside other if statements as well.
+```python
+if(a>5):
+        if(a==7):
+        print("true")
+        else:
+        print("false")
+else:
+        print("exit")
+```
+
 
 
