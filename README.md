@@ -779,109 +779,145 @@ Example-
             print(a)
 ```
 
-4. difference() and difference_update() - difference method returns items which are only present in the original set and not common to the both sets.
-    The difference() method returns a new set whereas difference_update() method updates into the existing set from another set.
-    example-
+4. `difference()` and `difference_update()` - difference method returns items which are only present in the original set and not common to the both sets. The difference() method returns a new set whereas difference_update() method updates into the existing set from another set.
+   
+Example-
+```python
             a={1,4,45,4,6}
             b={1,6,7,4,8,9}
             c=a.difference(b)  #difference of a and b
             print(c)
             a.difference_update(b)   #updates a with difference of a and b
             print(a)
+```
 
-    5. isdisjoint() - returns true if there are no common values between two sets otherwise false
-            set1.disjoint(set2)
+5. `isdisjoint()` - returns true if there are no common values between two sets otherwise false
+
+`set1.disjoint(set2)`
     
-    6. issuperset() - checks if the original set contains all values of other set.
-    example-
+6. `issuperset()` - checks if the original set contains all values of other set.
+   
+Example-
+```python
             a={1,4,4,4,6}
             b={1,6,7,4,8,9}
             print(b.issuperset(a)) #checks if b is superset of a
-            #returns true becuase b contains all elements of a 
+            #returns true becuase b contains all elements of a
+```
     
-    7. issubset() - checks if all item of the given set are present in the original set.
-    example-
+7. `issubset()` - checks if all item of the given set are present in the original set.
+   
+Example-
+```python
             a={1,4,4,4,6}
             b={1,6,7,4,8,9}
             print(a.issubset(b)) #checks if a is subset of b
             #returns true becuase all elements of a are present in b
+```
     
-    8. add() - to add single item to set
-        set1.add(item)
+8. `add()` - to add single item to set
+   
+`set1.add(item)`
     
-    9. remove()/discard() - use to remove item from list. The main difference between remove and discard is that, if we try to delete an item which is not present in set, then remove() raises an error, whereas discard() does not raise any error.
-        set1.remove(item)
+9. `remove()/discard()` - use to remove item from list. The main difference between remove and discard is that, if we try to delete an item which is not present in set, then remove() raises an error, whereas discard() does not raise any error.
     
-    10. pop() - pop generally removes last item in  python but as set are unordered we will never know which item is going to be removed.
-        set.pop()
+`set1.remove(item)`
     
-    11. del - del is not a method rather a keyword which deletes the entire set 
-        del setname
-    
-    12. clear() - clears all items in the set and prints an empty set.
-        set1.clear()
+10. `pop()` - pop generally removes last item in  python but as set are unordered we will never know which item is going to be removed.
 
-check like this if an item exits in a set :
+`set.pop()`
+    
+11. `del` - del is not a method rather a keyword which deletes the entire set
+    
+`del setname`
+    
+12. `clear()` - clears all items in the set and prints an empty set.
+    
+`set1.clear()`
+
+Check like this if an item exits in a set :
+```python
         a={1,4,4,4,6}
         b={1,6,7,4,8,9}
         if 1 in a:
             print("yes")
         else:
             print("no")
+```
 
-#Dictionaries in Python
-Dictionaries are ordered collection of data items arranged in key:value pairs
-example-
+## Dictionaries in Python
+Dictionaries are ordered collection of data items arranged in `key:value` pairs.
+
+Example-
+```python
     dict1={"name":"chetan","age":20,"city":"mumbai"}
     print(dict1)
     print(dict1["name"]) #will throw error if key is not present
     print(dict1.get("name")) #will print none if key is not present
+```
 
-Accessing keys in Dictionaries
-example-
+### Accessing keys in Dictionaries
+Example-
+```python
     dict1={"name":"chetan","age":20,"city":"mumbai"}
     print(dict1.keys())
     #or
     for key in dict1.keys():
         print(key)
-similarly values can be accessed by 
+```
+Similarly values can be accessed by :
+```python
     print(dict1.values()) #prints all values
     print(dict1[key]) #prints single value corresponding to key
+```
 
-printing key value pairs
+Printing key value pairs:
+```python
     dict1={"name":"chetan","age":20,"city":"mumbai"}
     print(dict1.items()) # items() is used to print key value pairs
+```
 
-## Dictionary methods
-    1. update() - used to update one dictionary with a new value or with a new dictionary.
+### Dictionary methods
+
+1. `update()` - used to update one dictionary with a new value or with a new dictionary.
+```python
         dict1.update({"age":20}) #update age key if available if not creates a new key value
-    2. clear() - clears all items from the dictionary and prints an empty Dictionary
+```
+2. `clear()` - clears all items from the dictionary and prints an empty Dictionary
+```python
         dict1.clear()
-    3. pop() - removes key value pair who's key is passed as parameter
+```
+3. `pop()` - removes key value pair who's key is passed as parameter
+```python
         dict1.pop("key")
-    4. popitem() - removes the last key:value pair from the dictionary
+```
+4. `popitem()` - removes the last key:value pair from the dictionary
+```python
         dict1.popitem()
-    5. del - this is a keyword which can also be used to delete an item from the dictionary but if any key is not provided it will
-    delete the whole dictionary
+```
+5. `del` - this is a keyword which can also be used to delete an item from the dictionary but if any key is not provided it will delete the whole dictionary.
+```python
         del dict1["key"] # deletes a single item
         del dict1 # deletes the dictionary
+```
 
-# for loop with else
-In python else can not only be used with if but with for and while loop also. The control is given to else block ones the condition gets false in the loop
+## for loop with else
+In python else can not only be used with if but with for and while loop also. The control is given to else block ones the condition gets false in the loop.
+```python
     for i in range(0,5):
         print(i)
     else:
         print("loop ended")
+```
 
-Exception Handling in python
-    Exception handling is the process of responding to unwanted or unexpected events when a computer program runs. Exception handling deals with these events to avoid the program or system crashing, and without this process, exceptions would disrupt the normal operation of a program.
-    When these exceptions occur, the Python interpreter stops the current process and passes it to the calling process until it is handled. If not handled, the program will crash.
+## Exception Handling in python
+Exception handling is the process of responding to unwanted or unexpected events when a computer program runs. Exception handling deals with these events to avoid the program or system crashing, and without this process, exceptions would disrupt the normal operation of a program. When these exceptions occur, the Python interpreter stops the current process and passes it to the calling process until it is handled. If not handled, the program will crash.
 
-    try and except:
-        it is used in python when we know that the program may give error or in some cases we dont even know if the server would
-        give error at some point of time. We define the try block with the code to execute but if due to some reason let it be wrong user input or dead server
-        if the try code is unable to execute then the program will not terminate it will execute the except block and then move forward with next lines of code.
-            syntax-
+### try and except:
+It is used in python when we know that the program may give error or in some cases we dont even know if the server would give error at some point of time. We define the try block with the code to execute but if due to some reason let it be wrong user input or dead server. If the try code is unable to execute then the program will not terminate it will execute the except block and then move forward with next lines of code.
+
+Syntax-
+```python
             try:
                 #statements which could generate 
                 #exception
@@ -898,11 +934,13 @@ Exception Handling in python
                     print("value error occured")
                 except IndexError:
                     print( "index error occured")
+```
 
-#Finally keyword in python
+## Finally keyword in python
 The block of code written inside finally clause is executed always irrespective of the retun of the values from try or except blocks in a function. This fianlly clause may be used for various purposes like closing some resourse files, closing the database connections or ending the program with some appreciative messages. Generally used for clean up tasks
 
 Example-
+```python
     def func1(n):
         try:
             list1=[2,3,4,5,6,7,8,9,10]
@@ -917,16 +955,16 @@ Example-
         finally:
             print("function ended") # will execute even after function returns a value
     func1("ch")
+```
 
-# Raising Custom errors
-    In python we can raise custom errors using raise keyword it is important to handle errors with which python cannot handle itself (builtin) so that
-    our code do not produces any abnormal behaviour. Handling error means dealing with error when some user enters wrong input whereas raising errors means 
-    raising custom errors when when some event occurs.
+## Raising Custom errors
+In python we can raise custom errors using raise keyword it is important to handle errors with which python cannot handle itself (builtin) so that our code do not produces any abnormal behaviour. Handling error means dealing with error when some user enters wrong input whereas raising errors means raising custom errors when when some event occurs.
 
-# Defining Custom Exceptions
-Sometimes we might want to perform something when a custom error occurs in that case we define the custom exceptions.In Python, we can define custom exceptions by creating a new class that is derived from the built-in Exception class.
-For example, sending an error report to the admin, calling an api, etc.
-syntax-
+## Defining Custom Exceptions
+Sometimes we might want to perform something when a custom error occurs in that case we define the custom exceptions.In Python, we can define custom exceptions by creating a new class that is derived from the built-in Exception class. For example, sending an error report to the admin, calling an api, etc.
+
+Syntax-
+```python
     class CustomError(Exception):
     # code ...
     pass
@@ -934,93 +972,107 @@ syntax-
     # code ...
     except CustomError:
     # code...
+```
 
-#Short hand if else
+## Short hand if else
 One line if else statement, with 3 conditions:
+```python
 a=330
 b=435
 print(a) if a>b else print(b) if a<b else print(a"="b)
+```
 However, it's not suitable for more complex situations where you need to execute multiple statements or perform more complex logic. In those cases, it's best to use the full if-else syntax.
 
-#Enumerate function
+## Enumerate function
 Enumerate function helps to get the value as well as index of elements in string tuple lists etc while using a for loop simultaniously.
+```python
     marks=[23,45,67,89,90]
     for index,mark in enumerate(marks):
         print(mark)
         if(index==3):
             print("index is 3")
+```
 
-By defaut indec in enumerate starts with 0 but we can change the starting index by passing it as an argument to the enumerate function
+By defaut index in enumerate starts with 0 but we can change the starting index by passing it as an argument to the enumerate function
+```python
     marks=[23,45,67,89,90]
     for index,mark in enumerate(marks,start=1):
         print(mark)
         if(index==3):
             print("index is 3")
+```
 
-#Virtual environment in python
-Virtual environment can be created in python using venv keyword it basically means creating many isolated environments on a single machine.
-The virtual environment has no relation with the home environment of the pc and is like a fresh python on fresh pc it is genrally used to avoid
-package conflicts when many developers are working on the same project because it they use their home environemnt there may be a dissimilarity in their
-packages and versions.
+## Virtual environment in python
+Virtual environment can be created in python using venv keyword it basically means creating many isolated environments on a single machine. The virtual environment has no relation with the home environment of the pc and is like a fresh python on fresh pc it is genrally used to avoid package conflicts when many developers are working on the same project because it they use their home environemnt there may be a dissimilarity in their packages and versions.
 
-    # Create a virtual environment
-    python -m venv myenv
+1. Create a virtual environment
+`python -m venv myenv`
 
-    # Activate the virtual environment (Linux/macOS)
-    source myenv/bin/activate
+2. Activate the virtual environment (Linux/macOS)
+`source myenv/bin/activate`
 
-    # Activate the virtual environment (Windows)
-    myenv\Scripts\activate.bat
+3. Activate the virtual environment (Windows)
+`myenv\Scripts\activate.bat`
 
-    # Deactivate the virtual environment
-    deactivate
+4. Deactivate the virtual environment
+`deactivate`
 
-#Requirements.txt 
+## Requirements.txt 
 reuirements.txt is a file that contain all the packages with their versions that you have used in your project. This file
 can easily be use to download all those packages in a new environment in a single go.Using a virtual environment and a requirements.txt file can help you manage the dependencies for your Python projects and ensure that your projects are portable and can be easily set up on a new machine.
 
-    # Output the list of installed packages and their versions to a file
-    pip freeze > requirements.txt
+1. Output the list of installed packages and their versions to a file
+`pip freeze > requirements.txt`
 
-    To install the packages listed in the requirements.txt file, you can use the pip install command with the -r flag:
+To install the packages listed in the requirements.txt file, you can use the pip install command with the -r flag:
 
-    # Install the packages listed in the requirements.txt file
-    pip install -r requirements.txt
+2. Install the packages listed in the requirements.txt file
+`pip install -r requirements.txt`
 
-#import working in python
+## import working in python
 Importing in Python is the process of loading code from a Python module into the current script. This allows you to use the functions and variables defined in the module in your current script, as well as any additional modules that the imported module may depend on.
+```python
     import math 
     math.sqrt(9)
+```
 
-from keyword - use to import specific function or variable from a module
-    from math import sqrt,pi #we can import multiple functions using ","
+`from keyword` - use to import specific function or variable from a module from math import sqrt,pi #we can import multiple functions using `,`
+```python
     c=sqrt(9)*pi
     print(c)
+```
 
-we can also import everything from a module using * but it is not recommended as it might lead to confusion
+We can also import everything from a module using * but it is not recommended as it might lead to confusion
+```python
     from math import *
+```
 
-"as" keyword - as keyword is like giving an alias name to the module you are importing to improve code readability
+1. `as` keyword - as keyword is like giving an alias name to the module you are importing to improve code readability
+```python
 import pandas as pd 
 pd.__version__ #we can now use pd directly
+```
 
-"dir" - Python has a built-in function called dir that you can use to view the names of all the functions and variables defined in a module. This can be helpful for exploring and understanding the contents of a new module.
+2. `dir` - Python has a built-in function called dir that you can use to view the names of all the functions and variables defined in a module. This can be helpful for exploring and understanding the contents of a new module.
+```python
 import math
 print(dir(math))
+```
 
-we can also import our custom functions and variables from our another python script
-    from filename import function_name,variable_name
+We can also import our custom functions and variables from our another python script
+```python
+from filename import function_name,variable_name
+```
 
-#
-The if __name__ == "__main__" idiom is a common pattern used in Python scripts to determine whether the script is being run directly or being imported as a module into another script.
+The `if __name__ == "__main__"` idiom is a common pattern used in Python scripts to determine whether the script is being run directly or being imported as a module into another script.
 
-In Python, the __name__ variable is a built-in variable that is automatically set to the name of the current module. When a Python script is run directly, the __name__ variable is set to the string __main__ When the script is imported as a module into another script, the __name__ variable is set to the name of the module.
-if we import a script as module directly it runs automatically if we only want to use some function of it we can either specify function using "from" or in the script being imported
-as module we can write 
+In Python, the `__name__` variable is a built-in variable that is automatically set to the name of the current module. When a Python script is run directly, the `__name__` variable is set to the string `__main__` When the script is imported as a module into another script, the `__name__` variable is set to the name of the module. If we import a script as module directly it runs automatically if we only want to use some function of it we can either specify function using `from` or in the script being imported as module we can write 
+```python
 if __name__="__main__" #this ensures that the other code runs only when the environment of execution is main
+```
 
-#script to import as module
-
+Script to import as module:
+```python
     def welcome():
         print("Welcome to the world of Python with Chetan")
     if __name__ == "__main__":
@@ -1029,10 +1081,13 @@ if __name__="__main__" #this ensures that the other code runs only when the envi
 #main script
     import chetan
     chetan.welcome()
+```
 
-#OS module in python
+## OS module in python
 The os module in Python is a built-in library that provides functions for interacting with the operating system. It allows you to perform a wide variety of tasks, such as reading and writing files, interacting with the file system, and running system commands.
-example-
+
+Example-
+```python
     import os
 
     if(not os.path.exists("newfolder")):
@@ -1041,9 +1096,12 @@ example-
             os.mkdir("newfolder/new"+str(i))
             os.rename("newfolder/new"+str(i),"newfolder/newrenamed"+str(i))
     print(os.listdir("newfolder"))
+````
 
-To execute system commands we can use os.system("command")
-You can also use the os.popen function to run a command and get the output as a file-like object:
+To execute system commands we can use `os.system("command")`
+
+You can also use the `os.popen` function to run a command and get the output as a file-like object:
+```python
     import os
 
     # Run the "ls" command and get the output as a file-like object
@@ -1055,9 +1113,11 @@ You can also use the os.popen function to run a command and get the output as a 
 
     # Close the file-like object
     f.close()
+```
 
 Reading and writing files The os module provides functions for opening, reading, and writing files. For example, to open a file for reading, you can use the open function:
-import os
+```python
+    import os
 
     # Open the file in read-only mode
     f = os.open("myfile.txt", os.O_RDONLY)
@@ -1067,9 +1127,11 @@ import os
 
     # Close the file
     os.close(f)
+````
 
-#Local vs Global variable in python
+## Local vs Global variable in python
 A local variable is a variable that is defined inside a function and gets destroyed as soon whereas a global variable is accesible from any function in the code
+```python
     x=10
     def func1():
         x=5
@@ -1077,8 +1139,10 @@ A local variable is a variable that is defined inside a function and gets destro
         print(y)
     func1()
     print(x) #This will not print 5 because x is a global variable and it is not changed in the function
+```
 
 we can use global keyword to edit the global variable inside a function like this -
+```python
     x=10
     def func1():
         global x
@@ -1087,134 +1151,162 @@ we can use global keyword to edit the global variable inside a function like thi
         print(y)
     func1()
     print(x) #This will not print 5 because x is a global variable and it is not changed in the function
+```
 
 It's important to note that it's generally considered good practice to avoid modifying global variables from within functions, as it can lead to unexpected behavior and make your code harder to debug.
 
-#File I/O in python
-Opening a file      
+## File I/O in python
+Opening a file 
+```python
     f=open("filename","mode")
     f=open("file1.txt","r")
+```
 
-    Various modes are -
-    1. (read)r - This mode opens the file for reading only and gives an error if the file does not exist. This is the default mode if no mode is passed as a parameter.
-    2. (write)w - This mode opens the file for writing only and creates a new file if the file does not exist.
-    3. (append)a - This mode opens the file for appending only and creates a new file if the file does not exist.
-    4. (create)x - This mode creates a file and gives an error if the file already exists.
-    5. (text)t -  Apart from these modes we also need to specify how the file must be handled. t mode is used to handle text files. t refers to the text mode. There is no difference between r and rt or w and wt since text mode is the default. The default mode is 'r' (open for reading text, synonym of 'rt' ).
-    6. (binary)b - used to handle binary files (images, pdfs, etc).
+Various modes are -
+1. (read)`r` - This mode opens the file for reading only and gives an error if the file does not exist. This is the default mode if no mode is passed as a parameter.
+2. (write)`w` - This mode opens the file for writing only and creates a new file if the file does not exist.
+3. (append)`a` - This mode opens the file for appending only and creates a new file if the file does not exist.
+4. (create)`x` - This mode creates a file and gives an error if the file already exists.
+5. (text)`t` -  Apart from these modes we also need to specify how the file must be handled. t mode is used to handle text files. t refers to the text mode. There is no difference between r and rt or w and wt since text mode is the default. The default mode is 'r' (open for reading text, synonym of 'rt' ).
+6. (binary)`b` - used to handle binary files (images, pdfs, etc).
 
-Reading from a file
+### Reading from a file
+
 we can read using read() function
+```python
     f=open("file1.txt","r")
     text=f.read()
     print(text)
     f.close()
+```
 
-Writing to a file
+### Writing to a file
+```python
     f=open("file1.txt","w")
     f.write("hello world")
     f.close()
+```
 
-Closing a file
-It is important to close a file after you are done with it. This releases the resources used by the file and allows other programs to access it.
+### Closing a file
+It is important to close a file after you are done with it. This releases the resources used by the file and allows other programs to access it. To close a file, you can use the `close()` method.
 
-To close a file, you can use the close() method.
-
-with keyword
+`with` keyword
 if we dont wan to close file again and again we can use with statement to automatically close file
+```python
     with open("file1.txt","r") as f:
         print(f.read())
+```
 
-Other file methods
-    1. readline() - The readline() method reads a single line from the file. If we want to read multiple lines, we can use a loop.
+### Other file methods
+1. `readline()` - The readline() method reads a single line from the file. If we want to read multiple lines, we can use a loop.
+```python
         with open("file1.txt","r") as f:
         while True:
             line=f.readline()
             if(not line):
                 break
             print(line)
+```
     
-    2. writelines() - The writelines() method in Python writes a sequence of strings to a file. The sequence can be any iterable object, such as a list or a tuple.
+2. `writelines()` - The writelines() method in Python writes a sequence of strings to a file. The sequence can be any iterable object, such as a list or a tuple.
+```python
         list1=[1,2,3,4,5,6,7,8,9,10]
         with open("file1.txt","w") as f:
                 f.writelines(str(list1))
+```
     
-    3. seek() - with the help of seek function the current position whithin the file can be moved and data can be read from that specific position
+3. `seek()` - with the help of seek function the current position whithin the file can be moved and data can be read from that specific position
+```python
         with open("file1.txt","r") as f:
             f.seek(4) #moves the cursor to 4th position
             data=f.read(5)
             print(data)
+```
     
-    4.tell() - tell() function helps to tell us the current position of the cursor within the file. This can be useful for keeping track of your location within the file or for seeking to a specific position relative to the current position.
+4.`tell()` - tell() function helps to tell us the current position of the cursor within the file. This can be useful for keeping track of your location within the file or for seeking to a specific position relative to the current position.
+```python
             with open("file1.txt","r") as f:
                 f.seek(4) #moves the cursor to 4th position
                 data=f.read(5)
                 print(data)
                 print(f.tell()) #current position of cursor
+```
 
-     5. truncate() - it is used to remove all characters in a file upto a specific position. it can only be used with write and append modes
+5. `truncate()` - it is used to remove all characters in a file upto a specific position. it can only be used with write and append modes
+```python
         with open("file1.txt","w") as f:
             f.write("hello world")
             f.truncate(3)
+```
 
-#lambda functions
-Lambda functions are the functions which are used for writing short functions this functions are are genrally defined in a variable which is used as the function name or they can be used directly without name (anonymously)
-Lambda functions are often used in situations where a small function is required for a short period of time. They are commonly used as arguments to higher-order functions, such as map, filter, and reduce
+## lambda functions
+Lambda functions are the functions which are used for writing short functions this functions are are genrally defined in a variable which is used as the function name or they can be used directly without name (anonymously). Lambda functions are often used in situations where a small function is required for a short period of time. They are commonly used as arguments to higher-order functions, such as `map`, `filter`, and `reduce`.
+```python
     sum=lambda x:x+=x
     print(sum(5))
 example-
     # Lambda function to calculate the product of two numbers,
     # with additional print statement
     lambda x, y: print(f'{x} * {y} = {x * y}')
+```
 
-#Map , Filter and reduce
-Map function applies the given function to each element in a sequence and returns a new map object
+## Map , Filter and reduce
+1. `Map` function applies the given function to each element in a sequence and returns a new map object
+```python
     list1=[1,2,3,4,5,6,7,8,9,10]
     newlist=list(map(lambda x:x*2,list1))
     print(newlist)
+```
     
-Filter function filter elements based on a boolean condition in the functions passed and returns a new sequence containing elements meeting the condition
+2. `Filter` function filter elements based on a boolean condition in the functions passed and returns a new sequence containing elements meeting the condition
+```python
     list1=[1,2,3,4,5,6,7,8,9,10]
     newseq=filter(lambda x: x>5,list1)
     print(list(newseq))
+```
 
 Higher order functions are those functions which take function as an argument
 
-reduce
+`reduce`
+
 we have to import reduce in order to use it first
+```python
     from functools import reduce
+```
 reduce helps to reduce a an iterable to a single value
+```python
     from functools import reduce
     list1=[1,2,3,4,5,6,7,8,9,10]
     newseq=reduce(lambda x,y: (x+y),list1) #this  will work like 1+2=3,3+3=6,6+4=10,10+5=15,15+6=21,21+7=28,28+8=36,36+9=45,45+10=55
     print(newseq)
+```
 
-#is vs ==
-is compares exact location of object in memory whereas "==" compares values of objects
-when immutable things are created in python like a tuple or constant and same thing is created with another variable name then
-python only assigns memory once and other variable is made to point to that location
-
+## is vs ==
+`is` compares exact location of object in memory whereas `==` compares values of objects when immutable things are created in python like a tuple or constant and same thing is created with another variable name then python only assigns memory once and other variable is made to point to that location
+```python
 a=4
 b=4 #because both are constant b will point to memory location of a 
 print(a is b) # willl print true
+```
 
-#Object Oriented programming in Python
- In programming languages, mainly there are two approaches that are used to write program or code.
+## Object Oriented programming in Python
+In programming languages, mainly there are two approaches that are used to write program or code.
 
 1. Procedural Programming
 2. Object-Oriented Programming
 
-The procedure we are following till now is the “Procedural Programming” approach. So, in this session, we will learn about Object Oriented Programming (OOP). The basic idea of object-oriented programming (OOP) in Python is to use classes and objects to represent real-world concepts and entities.
+The procedure we are following till now is the `Procedural Programming` approach. So, in this session, we will learn about Object Oriented Programming (OOP). The basic idea of object-oriented programming (OOP) in Python is to use classes and objects to represent real-world concepts and entities.
 
 A class is a blueprint or template for creating objects. It defines the properties and methods that an object of that class will have. Properties are the data or state of an object, and methods are the actions or behaviors that an object can perform.
 
-An object is an instance of a class, and it contains its own data and methods. For example, you could create a class called "Person" that has properties such as name and age, and methods such as speak() and walk(). Each instance of the Person class would be a unique object with its own name and age, but they would all have the same methods to speak and walk.
+An object is an instance of a class, and it contains its own data and methods. For example, you could create a class called "Person" that has properties such as name and age, and methods such as `speak()` and `walk()`. Each instance of the Person class would be a unique object with its own name and age, but they would all have the same methods to speak and walk.
 
-One of the key features of OOP in Python is encapsulation, which means that the internal state of an object is hidden and can only be accessed or modified through the object's methods. This helps to protect the object's data and prevent it from being modified in unexpected ways.
+One of the key features of `OOP` in Python is encapsulation, which means that the internal state of an object is hidden and can only be accessed or modified through the object's methods. This helps to protect the object's data and prevent it from being modified in unexpected ways.
 
 Another key feature of OOP in Python is inheritance, which allows new classes to be created that inherit the properties and methods of an existing class. This allows for code reuse and makes it easy to create new classes that have similar functionality to existing classes.
 
-Polymorphism is also supported in Python, which means that objects of different classes can be treated as if they were objects of a common class. This allows for greater flexibility in code and makes it easier to write code that can work with multiple types of objects.
+`Polymorphism` is also supported in Python, which means that objects of different classes can be treated as if they were objects of a common class. This allows for greater flexibility in code and makes it easier to write code that can work with multiple types of objects.
+```python
 
     class person:
         name="chetan"
@@ -1226,12 +1318,16 @@ Polymorphism is also supported in Python, which means that objects of different 
     object1=person()
     object1.occupation="cyber security expert"
     object1.info()
+```
 
-#constructors in python
+##  constructors in python
 Constructor is a special method in a class that is used to initialize objects. Constructor is invoked automatically as soon as an object is created
+
 There are 2 types of constructors-
-    1. parameterized constructor - which take arguments along with self
-    2. Default constructor - which only takes self as argument
+
+1. `parameterized constructor` - which take arguments along with self
+2. `Default constructor` - which only takes self as argument
+```python
         class person:
             name="chetan"
             age=20
@@ -1244,15 +1340,20 @@ There are 2 types of constructors-
 
         object1=person("goku","HR")
         object1.info()
+```
 
-#Decorators in Python
+## Decorators in Python
 A decorator takes a function as an argument then modifies it and returns a new function which is refrred to as decorated function
-synax-
+
+Synax-
+```python
     @decorator_function
     def my_function():
         pass
+```
 
-Note - in a function *args is used to accept arguments as tuple(positional argument) and **args is used to accept arguments as dictionary(keyword arguments)
+Note - in a function `*args` is used to accept arguments as tuple(positional argument) and **args is used to accept arguments as dictionary(keyword arguments)
+```python
     def greet(fx):
         def mfx(*args,**kwargs):
             print("Welcome")
@@ -1269,6 +1370,7 @@ Note - in a function *args is used to accept arguments as tuple(positional argum
         print("hello world")
 
     add(number=2,number2=3)
+```
 
 In conclusion, python decorators are a way to extend the functionality of functions and methods, by modifying its behavior without modifying the source code. They are used for a variety of purposes, such as logging, memoization, access control, and more. They are a powerful tool that can be used to make your code more readable, maintainable, and extendable.
 
