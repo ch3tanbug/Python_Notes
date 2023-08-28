@@ -1807,43 +1807,47 @@ example program -
     args=parser.parse_args()
     download_img(args.url,args.optional)
 
-#Walrus Operator 
-In python earlier it was not possible to assign values in an expression but to fullfill this need walrus operator (:=) was introduced
-    we cannot do print(a=4) in python as this is not allowed but same thing can be done with walrus operator
-    print(a:=4) #this will work because of walrus opeartor
-example-
+## Walrus Operator 
+In python earlier it was not possible to assign values in an expression but to fullfill this need walrus operator (:=) was introduced. We cannot do print(a=4) in python as this is not allowed but same thing can be done with walrus operator
+```python
+print(a:=4) #this will work because of walrus opeartor
+```
+Example-
+```python
     fruits=list()
     while(fruit:=input("Enter a fruit: ")!="quit"):
         fruits.append(fruit)
     print(fruits)
+````
 
-#Shutil module
-used to perform high level file operation (built in module).The name "shutil" is short for shell utility. It provides a convenient and efficient way to automate tasks that are commonly performed on files and directories
+## Shutil module
+Used to perform high level file operation (built in module).The name "shutil" is short for shell utility. It provides a convenient and efficient way to automate tasks that are commonly performed on files and directories
 
-Common methods -
-1. shutil.copy(src, dst): This function copies the file located at src to a new location specified by dst. If the destination location already exists, the original file will be overwritten.
+### Common methods -
+1. `shutil.copy(src, dst)`: This function copies the file located at src to a new location specified by dst. If the destination location already exists, the original file will be overwritten.
 
-2. shutil.copy2(src, dst): This function is similar to shutil.copy, but it also preserves more metadata about the original file, such as the timestamp.
+2. `shutil.copy2(src, dst)`: This function is similar to shutil.copy, but it also preserves more metadata about the original file, such as the timestamp.
 
-3. shutil.copytree(src, dst): This function recursively copies the directory located at src to a new location specified by dst. If the destination location already exists, the original directory will be merged with it.
+3. `shutil.copytree(src, dst)`: This function recursively copies the directory located at src to a new location specified by dst. If the destination location already exists, the original directory will be merged with it.
 
-4. shutil.move(src, dst): This function moves the file located at src to a new location specified by dst. This function is equivalent to renaming a file in most cases.
+4. `shutil.move(src, dst)`: This function moves the file located at src to a new location specified by dst. This function is equivalent to renaming a file in most cases.
 
-5. shutil.rmtree(path): This function recursively deletes the directory located at path, along with all of its contents. This function is similar to using the rm -rf command in a shell.
+5. `shutil.rmtree(path)`: This function recursively deletes the directory located at path, along with all of its contents. This function is similar to using the rm -rf command in a shell.
 
-example-
+Example-
+```python
     import shutil
     shutil.copytree("new folder","copied_folder")
     shutil.rmtree("copied_folder")
     shutil.copy("file1.txt","copied.txt")
     shutil.move("copied.txt","new folder")
+```
 
-#requests module
-The Python Requests module is an HTTP library that enables developers to send HTTP requests in Python. This module enables you to send HTTP requests using Python code and makes it possible to interact with APIs and web services.
+## requests module
+The Python Requests module is an HTTP library that enables developers to send HTTP requests in Python. This module enables you to send HTTP requests using Python code and makes it possible to interact with APIs and web services. To scrap webpages and to beautigy them we have to use bs4 module along with requests
 
-to scrap webpages and to beautigy them we have to use bs4 module along with requests
-
-example (requests using simple post api)-
+Example (requests using simple post api)-
+```python
     import requests
     url="https://jsonplaceholder.typicode.com/posts"
     headers={
@@ -1856,8 +1860,10 @@ example (requests using simple post api)-
     }
     send=requests.post(url,body,headers)
     print(send.text)
+```
 
-example(using bs4 for scrapping)
+Example(using bs4 for scrapping)
+```python
     from bs4 import BeautifulSoup
     import requests
     url="https://docs.python.org"
@@ -1866,29 +1872,30 @@ example(using bs4 for scrapping)
     print(soup.prettify())
     for heading in soup.find_all("h1"):
         print(heading.text)
+```
 
-# generators in python
+## generators in python
 These are special type of function that allow to create an iterable sequence of values on the fly. This means generators doent store items in memory like list
 it generates a value display it and frees the memory next time the new value is displayed and the process goes on
 
-"yield" keyword is needed to return a value from the generator and suspends the execution of the program until a new value is requested
+`yield` keyword is needed to return a value from the generator and suspends the execution of the program until a new value is requested
 new value is requested by using the "next" keyword.
 
-example-
+Example-
+```python
     def generator():
         for i in range(300):
             yield i
     gen=generator()
     print(next(gen))
     print(next(gen))
+```
 
-# Function caching
-Function caching can be implemented in python using the functools module. Function caching helps in the faster execution of a program
-when a program is executed more than once with the same values as the module saves the result when the fucntion is executed with each argument and displays the result
-directly next time the function is called. The cache is only maintained in each run of the program and destroyed when the program gets executed.
-It is only ideal to use caching only when some functions which are necessary for the user needs to be cached as caching everything may increase the size of memory
+## Function caching
+Function caching can be implemented in python using the functools module. Function caching helps in the faster execution of a program. When a program is executed more than once with the same values as the module saves the result when the fucntion is executed with each argument and displays the result directly next time the function is called. The cache is only maintained in each run of the program and destroyed when the program gets executed. It is only ideal to use caching only when some functions which are necessary for the user needs to be cached as caching everything may increase the size of memory
 
 Example-
+```python
     from functools import lru_cache
     import time
     @lru_cache(maxsize=None)
@@ -1898,21 +1905,24 @@ Example-
     print(count(3))
     print(count(1))
     print(count(3))
+```
 
-# Regular Expressions in Python
-To use regular expression we need to import re module these regular expression with the help of meta characters help us to find
-complex sequences or words in strings
+## Regular Expressions in Python
+To use regular expression we need to import re module these regular expression with the help of meta characters help us to find complex sequences or words in strings
+
 Example-
+```python
     import re
     pattern=r"[A-Z]+elsh"
     text='''David Delsh (14 May 1944 17 July 2003) was a Welsh authority on biological warfare. Appointed to the United Nations Special Commission in 1991 as a chief weapons inspector in Iraq, he led ten of the organisations missions. After the publication of a dossier in 2002, which stated that Iraq could deploy chemical and biological weapons within 45 minutes, Kelly had an off-the-record interview with Andrew Gilligan of the BBC about the claim. Gilligans reporting stated that Alastair Campbell, the Downing Street director of communications, insisted on the 45-minute claim, something which Kelly denied saying. Kelly appeared before a parliamentary committee on 15 July 2003, and before another the next day; he was found dead near his home the day after. Tony Blair, the prime minister, set up an inquiry under Lord Hutton that concluded that Kelly had killed himself. A review led by Dominic Grieve between 2010 and 2011 backed the finding. Kellys death has been the subject of documentaries and been fictionalised in media works.'''
     print(re.findall(pattern,text))
+```
 
-#Async IO
-In python generally functions execute one after another but if we want to run functions concurrently we can make function async.
-In Python, async programming is achieved through the use of the asyncio module and asynchronous functions.
+## Async IO
+In python generally functions execute one after another but if we want to run functions concurrently we can make function async. In Python, async programming is achieved through the use of the asyncio module and asynchronous functions.
 
-example-
+Example-
+```python
     import asyncio
     async def func1():
         print(1)
@@ -1930,15 +1940,15 @@ example-
         result=await asyncio.gather(func1(),func2(),func3()) #to run all the functions at the same time
         print(result)
     asyncio.run(main())
+```
 
-#Multithreading in Python
-Multithreading is a technique in programming that allows multiple threads of execution to run concurrently within a single process. In Python, we can use the threading module to implement multithreading.
-we have to import threading module
+## Multithreading in Python
+Multithreading is a technique in programming that allows multiple threads of execution to run concurrently within a single process. In Python, we can use the threading module to implement multithreading. We have to import threading module
 
-Note - When we start a thread like t1.start() the computer just starts all the threads and moves to further lines of code for execution
-and the result will be given when they get completed to wait for the thread to complete before going further in the program we can use threadname.join()
+Note - When we start a thread like `t1.start()` the computer just starts all the threads and moves to further lines of code for execution and the result will be given when they get completed to wait for the thread to complete before going further in the program we can use `threadname.join()`
 
-example-
+Example-
+```python
     import threading
     import time
 
@@ -1962,8 +1972,10 @@ example-
     t3.start()
     t2.join()
     t3.join()
+```
 
 We can also use ThreadPoolExecutor to ease the task of threading and can even use the map syntax to submit values in an iterable one by one
+```python
 
     #Threading using ThreadPoolExecutor
 
@@ -1989,27 +2001,29 @@ We can also use ThreadPoolExecutor to ease the task of threading and can even us
             for result in results: #result here is the return value of the function
                 print(result) 
     poolingdemo()
+```
 
 Note - Threading in Python allows you to run multiple tasks at the same time, giving the appearance of multitasking. Think of it like having multiple threads of execution, each doing its own thing. However, due to a limitation called the Global Interpreter Lock (GIL), threading in Python may not always provide true simultaneous execution for all tasks.
 
 Asyncio, on the other hand, is a newer approach that helps you handle many tasks efficiently without the need for multiple threads. It works by using a special technique called coroutines and an event loop. Coroutines are like lightweight tasks that can pause and resume their execution, allowing other coroutines to run in the meantime. The event loop manages these coroutines, making sure they run smoothly.
 
-# Multi-Processing
+## Multi-Processing
 Multiprocessing allows you to run multiple processes simultaneously. Each process operates independently and has its own memory space. It enables true parallelism by utilizing multiple CPU cores. However, interprocess communication can be more complex and resource-intensive.
 
 Threading, on the other hand, allows you to run multiple threads within a single process. Threads share the same memory space and can access shared data easily. However, due to the Global Interpreter Lock (GIL) in Python, which allows only one thread to execute Python bytecode at a time, threading may not provide true parallelism for CPU-bound tasks. It is better suited for I/O-bound tasks where threads can be blocked waiting for I/O operations.
 
 1. The following are some of the most commonly used functions in the multiprocessing module:
 
-    1.1 multiprocessing.Process(target, args): This function creates a new process that runs the target function with the specified arguments.
+    1.1 `multiprocessing.Process(target, args)`: This function creates a new process that runs the target function with the specified arguments.
 
-    1.2 multiprocessing.Pool(processes): This function creates a pool of worker processes that can be used to parallelize the execution of a function across multiple input values.
+    1.2 `multiprocessing.Pool(processes)`: This function creates a pool of worker processes that can be used to parallelize the execution of a function across multiple input values.
 
-    1.3 multiprocessing.Queue(): This function creates a queue that can be used to communicate data between processes.
+    1.3 `multiprocessing.Queue()`: This function creates a queue that can be used to communicate data between processes.
 
-    1.4 multiprocessing.Lock(): This function creates a lock that can be used to synchronize access to shared resources between processes.
+    1.4 `multiprocessing.Lock()`: This function creates a lock that can be used to synchronize access to shared resources between processes.
 
-Example of program downloading multiple files by using multiple processes
+Example of program downloading multiple files by using multiple processes:
+```PYTHON
     import multiprocessing
     import requests
     from concurrent.futures import ProcessPoolExecutor
@@ -2032,7 +2046,7 @@ Example of program downloading multiple files by using multiple processes
             for pro in pros:
                 pro.join()
                       
-                      OR
+                      #OR
 
             l1=[url for i in range(5)] #will print url 5 times
             l2=[i for i in range(5)]
@@ -2040,5 +2054,6 @@ Example of program downloading multiple files by using multiple processes
                 results=executor.map(downloadfile,l1,l2)
                 for r in results:
                         print(r)
+```
 
 
